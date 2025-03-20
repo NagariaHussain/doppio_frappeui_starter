@@ -41,6 +41,20 @@ The development server is configured to proxy your frappe app (usually running o
 If you notice the browser URL is `/frontend`, this is the base URL where your frontend app will run in production.
 To change this, open `src/router.js` and change the base URL passed to `createWebHistory`.
 
+if your site is running at some port other than port `8000` you may get a connection refused error, to resolve it add this to `vite.config.js` in the `frontend` root folder
+
+```
+server: {
+  proxy: {
+    '/api': {
+      target: 'http://{BASE_LINK}:{SITE_PORT}', # e.g HTTP://127.0.0.1:8015
+      changeOrigin: true,
+      secure: false
+    }
+  }
+}
+```
+
 ## Resources
 
 - [Vue 3](https://v3.vuejs.org/guide/introduction.html)
