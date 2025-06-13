@@ -25,13 +25,13 @@
 </template>
 
 <script lang="ts" setup>
-import { session } from '../data/session'
+import { session } from "../data/session"
 
 function submit(e) {
-  let formData = new FormData(e.target)
-  session.login.submit({
-    email: formData.get('email'),
-    password: formData.get('password'),
-  })
+	const formData = new FormData(e.target)
+	session.login.submit({
+		email: formData.get("email"),
+		password: formData.get("password"),
+	})
 }
 </script>

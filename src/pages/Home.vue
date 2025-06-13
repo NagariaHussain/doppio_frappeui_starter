@@ -23,14 +23,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { Dialog } from 'frappe-ui'
-import { createResource } from 'frappe-ui'
-import { session } from '../data/session'
+import { Dialog } from "frappe-ui"
+import { createResource } from "frappe-ui"
+import { ref } from "vue"
+import { session } from "../data/session"
 
 const ping = createResource({
-  url: 'ping',
-  auto: true,
+	url: "ping",
+	auto: true,
 })
 
 const showDialog = ref(false)
