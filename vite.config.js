@@ -12,10 +12,19 @@ export default defineConfig({
 			lucideIcons: true,
 			buildConfig: {
 				indexHtmlPath: "../<app-name>/www/frontend.html",
+				emptyOutDir: true,
+				sourcemap: true,
 			},
 		}),
 		vue(),
 	],
+	build: {
+		chunkSizeWarningLimit: 1500,
+		outDir: "../<app-name>/public/frontend",
+		emptyOutDir: true,
+		target: "es2015",
+		sourcemap: true,
+	},
 	resolve: {
 		alias: {
 			"@": path.resolve(__dirname, "src"),
