@@ -9,6 +9,7 @@ export default defineConfig({
 		frappeui({
 			frappeProxy: true,
 			jinjaBootData: true,
+			lucideIcons: true,
 			buildConfig: {
 				indexHtmlPath: "../<app-name>/www/frontend.html",
 			},
