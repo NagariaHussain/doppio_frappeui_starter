@@ -22,7 +22,7 @@ export default defineConfig({
 		},
 	},
 	optimizeDeps: {
-		include: ["feather-icons", "showdown"],
+		include: ["feather-icons", "showdown", "highlight.js/lib/core"],
 	},
 	server: {
 		allowedHosts: true,
