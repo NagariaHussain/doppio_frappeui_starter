@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  test-compilation:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'yarn'
+        
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+      
+    - name: Lint code
+      run: yarn lint
+      
+    - name: Build project
+      run: yarn build
+      
+    - name: Verify build output
+      run: |
+        if [ -d "dist" ]; then
+          echo "✅ Build successful - project compiles correctly"
+          echo "Build output size: $(du -sh dist)"
+        else
+          echo "❌ Build failed - project does not compile"
+          exit 1
+        fi
