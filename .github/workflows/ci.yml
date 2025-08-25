@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  test-compilation:
+  test:
     runs-on: ubuntu-latest
     
     steps:
@@ -26,15 +26,18 @@ jobs:
     - name: Lint code
       run: yarn lint
       
-    - name: Build project
-      run: yarn build
+    - name: Run tests
+      run: yarn test:run
       
-    - name: Verify build output
+    - name: Run tests with coverage
+      run: yarn test:coverage
+      
+    - name: Verify test coverage
       run: |
-        if [ -d "dist" ]; then
-          echo "✅ Build successful - project compiles correctly"
-          echo "Build output size: $(du -sh dist)"
+        if [ -d "coverage" ]; then
+          echo "✅ Tests completed successfully with coverage"
+          echo "Coverage report generated in coverage/ directory"
         else
-          echo "❌ Build failed - project does not compile"
+          echo "❌ Test coverage report not generated"
           exit 1
         fi
