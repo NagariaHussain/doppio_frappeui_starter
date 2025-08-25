@@ -1,0 +1,57 @@
+version: 2
+updates:
+  # Enable version updates for Yarn
+  - package-ecosystem: "yarn"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "06:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "NagariaHussain"
+    assignees:
+      - "NagariaHussain"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "automated"
+    ignore:
+      # Ignore major version updates for critical packages
+      - dependency-name: "vue"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "frappe-ui"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "vite"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "tailwindcss"
+        update-types: ["version-update:semver-major"]
+    # Group minor and patch updates together
+    groups:
+      vue-dependencies:
+        patterns:
+          - "vue*"
+        update-types:
+          - "minor"
+          - "patch"
+      build-tools:
+        patterns:
+          - "vite*"
+          - "@vitejs/*"
+          - "tailwindcss*"
+          - "postcss*"
+          - "autoprefixer"
+        update-types:
+          - "minor"
+          - "patch"
+      dev-dependencies:
+        patterns:
+          - "biome*"
+          - "@biomejs/*"
+          - "eslint*"
+          - "@types/*"
+        update-types:
+          - "minor"
+          - "patch"
