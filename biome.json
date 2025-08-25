@@ -7,12 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": [
-			"dist/**",
-			"coverage/**",
-			"node_modules/**",
-			"../<app-name>/**"
-		]
+		"ignore": ["dist/**", "coverage/**", "node_modules/**", "../<app-name>/**"]
 	},
 	"formatter": {
 		"enabled": true,
