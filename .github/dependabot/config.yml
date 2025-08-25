@@ -9,9 +9,9 @@ updates:
       timezone: "UTC"
     open-pull-requests-limit: 10
     reviewers:
-      - "harsh"
+      - "NagariaHussain"
     assignees:
-      - "harsh"
+      - "NagariaHussain"
     commit-message:
       prefix: "chore"
       include: "scope"
