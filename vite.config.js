@@ -11,6 +11,7 @@ export default defineConfig({
 			jinjaBootData: true,
 			lucideIcons: true,
 			buildConfig: {
+				outDir: "../<app-name>/public/frontend",
 				indexHtmlPath: "../<app-name>/www/frontend.html",
 				emptyOutDir: true,
 				sourcemap: true,
