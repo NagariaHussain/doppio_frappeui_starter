@@ -1,0 +1,15 @@
+[
+    {
+        "action": "remove",
+        "files": [
+            "tests",
+            "coverage",
+            ".github",
+            "yarn.lock",
+            "package-lock.json",
+            "*.log",
+            "*.local",
+            ".DS_Store"
+        ]
+    }
+]
