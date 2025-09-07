@@ -9,7 +9,8 @@
             "package-lock.json",
             "*.log",
             "*.local",
-            ".DS_Store"
+            ".DS_Store",
+            "vitest.config.js"
         ]
     }
 ]
